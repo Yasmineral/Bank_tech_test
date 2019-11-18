@@ -21,6 +21,26 @@ subject(:account) { described_class.new}
       expect{ account.withdraw(600) }.to raise_error "Insufficient funds"
     end
   end
+
+  describe "#record_transaction" do
+    it "pushes a new hash into the transactions array to record the deposit history" do
+      account.deposit(1000)
+      expect(account.transactions.count).to eq 1 
+    end  
+    it "pushes a new hash into the transactions array to record credit history" do
+      account.deposit(1000)
+      account.withdraw(50)
+      expect(account.transactions.count).to eq 2 
+    end
+    it "resets credit to equal 0" do
+      account.deposit(800)
+      expect(account.credit).to eq 0
+    end
+    it "resets debit to equal 0" do
+      account.deposit(800)
+      expect(account.debit).to eq 0
+    end
+  end
 end
 
 

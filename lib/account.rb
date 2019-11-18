@@ -19,6 +19,7 @@ attr_accessor :total_balance, :credit, :debit, :transactions
     fail "Insufficient funds" if @total_balance < amount
     @debit = amount
     @total_balance -= amount
+    record_transaction
   end
 
   def record_transaction
