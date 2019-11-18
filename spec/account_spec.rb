@@ -1,12 +1,12 @@
-require 'bank'
+require 'account'
 
 describe Account do
 subject(:account) { described_class.new}
  
   describe "#deposit" do
-    it "increses total balance by 1000 when user deposits 1000" do
+    it "increases total balance by 1000 when user deposits 1000" do
       account.deposit(1000)
-      expect(account.balance).to eq (1000)
+      expect(account.total_balance).to eq 1000
     end
   end
 
@@ -14,7 +14,7 @@ subject(:account) { described_class.new}
     it "decreases balance by 500 when user withdraws 500" do
       account.deposit(1000)
       account.withdraw(500)
-      expect(account.balance).to eq (500)
+      expect(account.total_balance).to eq 500
     end
     it "returns an error if there are insufficient funds" do
       account.deposit(500)

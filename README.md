@@ -27,6 +27,8 @@ date || credit || debit || balance
 
 -------------------------------------
 -------------------------------------
+# Set up
+
 Gemfile
 * Rubocop to analyse code style
 * SimpleCov to analyse code coverage
@@ -38,9 +40,14 @@ DO: add these lines to spec helper
 require 'simplecov'
 require 'simplecov-console'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
+SimpleCov.start
+SimpleCov.formatter = SimpleCov::Formatter::Console
 '''
+
+
+-------------------------------------
+-------------------------------------
+# Process
 
 User stories
 * As a customer, so that I can keep my money safe, I'd like to open a bank account
@@ -48,6 +55,10 @@ User stories
 * As a customer, so that I can access my money when I need it, I'd like to withdraw from my account
 * As a customer, so that I know how much money is in my account, I'd like to see my total balance
 * As a customer, so that I can manage my cash flow, I'd like to see a dated statment of all deposit & withdrawls
+
+- edgecase: no money in the account?
+
+
 
 account.deposit(1000)
 statment:
@@ -59,5 +70,10 @@ date, credit= 0, debit= 500, balance= 500
 
 All of this information is needed for the statment, therefore should be recorded with every credit / debit.
 A hash might be worth exploring here.
+Hardcode dates (based on requirements of the code)
+
+Now thinking a new class would be helpful to encapsulate the behaviour of a bank statement, which needs to record extra specific information
+with every deposit & withdraw. Will also need a print method. This should not be the job of the account, which should only be inputting our outputting money.
+
 
 
