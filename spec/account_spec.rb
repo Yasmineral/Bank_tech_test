@@ -41,24 +41,6 @@ subject(:account) { described_class.new}
       expect(account.debit).to eq 0
     end
   end
-
-  describe "#set_date" do
-    it "sets date to 10-01-2012 when user deposits 1000" do
-      account.credit = 1000
-      account.set_date
-      expect(account.date).to eq ("10-01-2012")
-    end 
-    it "sets date to 13-01-2012 when user deposits 2000" do
-      account.credit = 2000
-      account.set_date
-      expect(account.date).to eq ("13-01-2012")
-    end 
-    it "sets date to 14-01-2012 when user withdraws 500" do
-      account.debit = 500
-      account.set_date
-      expect(account.date).to eq ("14-01-2012")
-    end 
-  end
 end
 
 
