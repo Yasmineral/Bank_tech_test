@@ -2,15 +2,19 @@ require_relative 'account'
 
 class Statement
 
+  attr_accessor :transactions
   
   def initialize
+    @transactions = []
   end
+
 
   def display_header
-    print "date || credit || debit || balance"
+    puts "date || credit || debit || balance"
   end
 
-  def print(array)
+  def generate_statement(array)
+    display_header
     array.each do |hash|
       credit = hash[:credit]
       debit = hash[:debit]

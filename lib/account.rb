@@ -1,14 +1,15 @@
-require_relative 'transaction'
+require_relative 'statement'
 
 class Account
 
-  attr_accessor :total_balance, :transaction, :debit, :credit, :transactions
+  attr_accessor :total_balance, :transaction, :debit, :credit, :transactions, :statement
   
-    def initialize
+    def initialize(statement = Statement.new)
       @total_balance = 0
       @credit = 0
       @debit = 0
       @transactions = []
+      @statement = statement
     end
   
     def deposit(amount)
@@ -28,6 +29,10 @@ class Account
       transaction = { credit: @credit, debit: @debit, balance: @total_balance, date: Time.now.strftime("%d/%m/%Y") }
       @transactions << transaction
       reset
+    end
+
+    def print_statement
+      @statement.generate_statement(@transactions)
     end
 
     def reset
