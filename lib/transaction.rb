@@ -27,8 +27,8 @@ class Transaction
       print "date || credit || debit || balance"
     end
 
-    def print_transactions
-      puts @transactions
+    def print_transaction
+      
     end
 
   end

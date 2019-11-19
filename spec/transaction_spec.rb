@@ -17,9 +17,6 @@ describe Transaction do
     it "displays the header of the statement" do
       expect{ transaction.print_header }.to output(header).to_stdout
     end
-    it "prints out the entries contained in the transactions array" do
-      transaction.transactions = [{credit: 1000, debit: 0, balance: 1000, date: Time.now.strftime("%d/%m/%Y")}]
-      expect{ transaction.print_transactions }.to output(example_transaction).to_stdout
-    end
+    it ""
   end
 end

@@ -7,12 +7,14 @@ class Account
     def initialize(transaction = Transaction.new)
       @total_balance = 0
       @transaction = transaction
+      @credit = 0
+      @debit = 0
     end
   
     def deposit(amount)
       @total_balance += amount
-      @transaction.credit = amount
-      @transaction.record_transaction(@total_balance)
+      @credit = amount
+      @transaction.record_transaction(@total_balance, @credit)
     end
   
     def withdraw(amount)
@@ -20,10 +22,5 @@ class Account
       @total_balance -= amount
       @transaction.debit = amount
       @transaction.record_transaction(@total_balance)
-    end
-
-    # change to print
-    def show_transactions
-      @transaction.transactions
     end
   end
