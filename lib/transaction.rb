@@ -22,5 +22,10 @@ class Transaction
       @credit = 0
       @debit = 0
     end
+
+    def header
+      print "date || credit || debit || balance"
+    end
+
   end
 

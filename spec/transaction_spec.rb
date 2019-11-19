@@ -9,11 +9,12 @@ describe Transaction do
       transaction.record_transaction(1000)
       expect(transaction.transactions.count).to eq 1 
     end  
-    it "pushes a new hash into the transactions array, containing details of the current debit withdrawal" do
-      test_output = {credit: 1000, debit: 0, balance: 1000, date: Time.now.strftime("%d/%m/%Y") }
-      transaction.credit = 1000
-      transaction.record_transaction(1000)
-      expect(transaction.transactions[0]).to eq(test_output)
+  end
+
+  describe "#print_statement" do
+  header = "date || credit || debit || balance"
+    it "displays the header of the statement" do
+      expect{ transaction.header }.to output(header).to_stdout
     end
   end
 end

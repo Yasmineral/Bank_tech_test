@@ -2,6 +2,7 @@ require 'account'
 
 describe Account do
 subject(:account) { described_class.new}
+let(:transaction) { double(:transaction) }
  
   describe "#deposit" do
     it "increases total balance by 1000 when user deposits 1000" do
@@ -20,7 +21,6 @@ subject(:account) { described_class.new}
     end
   end
 end
-
 
 
 
