@@ -23,8 +23,12 @@ class Transaction
       @debit = 0
     end
 
-    def header
+    def print_header
       print "date || credit || debit || balance"
+    end
+
+    def print_transactions
+      puts @transactions
     end
 
   end
