@@ -1,16 +1,14 @@
 require_relative 'account'
 
 class Statement
-
   attr_accessor :transactions
-  
+
   def initialize
     @transactions = []
   end
 
-
   def display_header
-    puts "date || credit || debit || balance"
+    puts 'date || credit || debit || balance'
   end
 
   def generate_statement(array)
@@ -21,17 +19,17 @@ class Statement
       debit = hash[:debit]
       balance = hash[:balance]
       date = hash[:date]
-      display_row(credit, debit, balance, date)  
+      display_row(credit, debit, balance, date)
     end
   end
 
   def display_row(credit, debit, balance, date)
     if debit == 0
-      debit = ""
-      puts "%s || %s ||%s || %s" % [date, "%.2f" % credit, debit, "%.2f" % balance]
+      debit = ''
+      puts format('%s || %s ||%s || %s', date, format('%.2f', credit), debit, format('%.2f', balance))
     elsif credit == 0
-      credit = ""
-      puts "%s ||%s || %s || %s" % [date, credit, "%.2f" % debit, "%.2f" % balance]
+      credit = ''
+      puts format('%s ||%s || %s || %s', date, credit, format('%.2f', debit), format('%.2f', balance))
     end
   end
 end
