@@ -76,4 +76,6 @@ Now thinking a new class would be helpful to encapsulate the behaviour of a bank
 with every deposit & withdraw. Will also need a print method. This should not be the job of the account, which should only be inputting our outputting money.
 
 
-Testing is hard. Now thinking about starting again but don't want to waste time. I'd like to explore a better way of passing information between classes. Currently, I'm unable to test that the account class updates credit / debit info in the transactions class, probably because only one class should be responsible for all the data. But when I previously tried storing all of the information in account and passing it to transactions to print, the entries came back nil. 
+Testing is hard. Now thinking about starting again but don't want to waste time. I'd like to explore a better way of passing information between classes. Currently, I'm unable to test that the account class updates credit / debit info in the transactions class, probably because only one class should be responsible for all the data. But when I previously tried storing all of the information in account and passing it to transactions to print, the entries came back nil. Having to manually update transactions array in the tests.
+
+
