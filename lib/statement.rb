@@ -15,6 +15,7 @@ class Statement
 
   def generate_statement(array)
     display_header
+    array = array.reverse
     array.each do |hash|
       credit = hash[:credit]
       debit = hash[:debit]
