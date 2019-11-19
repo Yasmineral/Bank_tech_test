@@ -22,6 +22,7 @@ class Account
       @transaction.record_transaction(@total_balance)
     end
 
+    # change to print
     def show_transactions
       @transaction.transactions
     end
