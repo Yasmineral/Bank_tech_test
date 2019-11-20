@@ -50,5 +50,5 @@ Within the project folder, run tests & view test coverage with the following com
 I used Rubocop to anaylse code style and Simplecov to asses code coverage. Tests are currently all passing with coverage at 100% and zero offense listed.
 
 
-
+![alt text](test_coverage.png "testcoverage")
 
