@@ -5,7 +5,6 @@ describe Account do
   subject(:account) { described_class.new(statement) }
   transactions_array = [{credit: 100, debit: 0, balance: 100, date: Time.now.strftime('%d/%m/%Y')}]
 
-
   describe '#deposit' do
     it 'increases total balance by 10 when user deposits 10' do
       expect { account.deposit(10) }.to change { account.total_balance }.by(10)
