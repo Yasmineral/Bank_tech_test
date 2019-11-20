@@ -52,3 +52,46 @@ I used Rubocop to anaylse code style and Simplecov to asses code coverage. Tests
 
 ![alt text](test_coverage.png "testcoverage")
 
+
+# User stories
+
+```
+As a customer, 
+so that I can be a responsible adult, 
+I'd like to be able to open a bank account.
+```
+
+```
+As a customer, 
+so that I can keep my money safe,
+I'd like to deposit money into my bank account.
+```
+
+```
+As a customer,
+so that I can access my money when I need it,
+I'd like to withdraw from my account.
+```
+
+```
+As a customer,
+so that I know how much money is in my account,
+I'd like to see my total balance.
+```
+
+```
+As a customer, 
+so that I can manage my cash flow,
+I'd like to see a dated statment of all deposit & withdrawls.
+```
+
+
+# Process
+
+I began drawing out my domain model, identifying the nouns and verbs of my program. I decided to put most of the functionality into the Account class and begin the TDD process until I saw a good opportunity to refactor and extract classes. It was clear that all debit and credit transactions needed to be recorded and stored as soon as they were made to the account, so I added functionality to capture & push this information into an array within the Account class. The Transaction class was responsible for iterating through the array and printing the information in a user firendy way.  If I had more time, I would have liked to refactor these classes to enforce single responsbility, as currently the Account class is responsible for string the transaction history when I think this would be better suited to the Transaction class. I'd also have liked to implement a guard clause against adding or withrdrawing negative numbers.
+
+# Running program
+
+![alt text](Screenshot 2019-11-20 at 11.38.41.png "testcoverage")
+
+
