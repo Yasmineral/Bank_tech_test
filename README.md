@@ -92,6 +92,6 @@ I began drawing out my domain model, identifying the nouns and verbs of my progr
 
 # Running program
 
-![alt text](Screenshot 2019-11-20 at 11.38.41.png "testcoverage")
+![alt text](app.png "app")
 
 
