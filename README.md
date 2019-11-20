@@ -24,58 +24,31 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
+# Installation
 
--------------------------------------
--------------------------------------
-# Set up
+download the repo into your Projects folder using:
 
-Gemfile
-* Rubocop to analyse code style
-* SimpleCov to analyse code coverage
+```
+git clone ghttps://github.com/Yasmineral/Bank_tech_test.git
+```
 
-DO: bundle install gems
-DO: add these lines to spec helper
+change into the banking directory, then run:
 
-'''
-require 'simplecov'
-require 'simplecov-console'
+```
+bundle install
+```
 
-SimpleCov.start
-SimpleCov.formatter = SimpleCov::Formatter::Console
-'''
+to install dependencies.
 
+# Testing
 
--------------------------------------
--------------------------------------
-# Process
+Within the project folder, run tests & view test coverage with the following command:
 
-User stories
-* As a customer, so that I can keep my money safe, I'd like to open a bank account
-* As a customer, so that I can keep my money safe, I'd like to deposit money into my bank account
-* As a customer, so that I can access my money when I need it, I'd like to withdraw from my account
-* As a customer, so that I know how much money is in my account, I'd like to see my total balance
-* As a customer, so that I can manage my cash flow, I'd like to see a dated statment of all deposit & withdrawls
-
-- edgecase: no money in the account?
+```rspec```
 
 
-
-account.deposit(1000)
-statment:
-date, credit= 1000, debit= 0, balance= 1000
-
-account.withdraw(500)
-statment:
-date, credit= 0, debit= 500, balance= 500
-
-All of this information is needed for the statment, therefore should be recorded with every credit / debit.
-A hash might be worth exploring here.
-Hardcode dates (based on requirements of the code)
-
-Now thinking a new class would be helpful to encapsulate the behaviour of a bank statement, which needs to record extra specific information
-with every deposit & withdraw. Will also need a print method. This should not be the job of the account, which should only be inputting our outputting money.
+I used Rubocop to anaylse code style and Simplecov to asses code coverage. Tests are currently all passing with coverage at 100% and zero offense listed.
 
 
-Testing is hard. Now thinking about starting again but don't want to waste time. I'd like to explore a better way of passing information between classes. Currently, I'm unable to test that the account class updates credit / debit info in the transactions class, probably because only one class should be responsible for all the data. But when I previously tried storing all of the information in account and passing it to transactions to print, the entries came back nil. Having to manually update transactions array in the tests.
 
 
