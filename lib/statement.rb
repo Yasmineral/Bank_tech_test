@@ -1,10 +1,8 @@
 require_relative 'account'
 
 class Statement
-  attr_accessor :transactions
 
   def initialize
-    @transactions = []
   end
 
   def display_header

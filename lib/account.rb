@@ -28,8 +28,8 @@ class Account
 
   def add_transaction
     transaction = { credit: @credit, debit: @debit, balance: @total_balance, date: Time.now.strftime('%d/%m/%Y') }
-    @transactions << transaction
     reset
+    @transactions << transaction
   end
 
   def print_statement
