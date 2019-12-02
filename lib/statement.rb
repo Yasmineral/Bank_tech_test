@@ -2,9 +2,6 @@ require_relative 'account'
 
 class Statement
 
-  def initialize
-  end
-
   def display_header
     puts 'date || credit || debit || balance'
   end
